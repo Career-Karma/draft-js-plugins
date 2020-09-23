@@ -1,6 +1,6 @@
 {
   "name": "@careerkarma/draft-js-table-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
