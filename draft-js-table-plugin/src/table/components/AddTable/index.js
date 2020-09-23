@@ -91,6 +91,7 @@ export default class TableAdd extends Component {
             onChange={this.changeCols}
             value={this.state.columns}
           />
+          <span style={{ marginRight: '4%' }}>X</span>
           <input
             type="text"
             placeholder="Rows"
