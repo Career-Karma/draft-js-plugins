@@ -1,6 +1,5 @@
 import React from 'react';
 import TextareaAutosize from './TextArea';
-const isIE = !!window.MSInputMethodContext && !!document.documentMode;
 export default class InputCell extends React.Component {
   static defaultProps = {
     render: () => {},
@@ -36,10 +35,15 @@ export default class InputCell extends React.Component {
         ...this.state,
         showEditOptions: false,
       });
-    }, 1000);
+    }, 100);
     this.props.onChange(this.state.value);
   };
   render() {
+    const isIE =
+      typeof window !== 'undefined' &&
+      !!window.MSInputMethodContext &&
+      !!document.documentMode;
+
     if (isIE) {
       return (
         <span className={this.props.theme.cellWrapper}>
