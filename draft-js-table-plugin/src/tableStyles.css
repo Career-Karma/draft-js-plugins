@@ -16,7 +16,7 @@
   padding: .125em;
 }
 
-.table .tr:nth-child(odd) {
+.table .tr:nth-child(even) {
   background: #fafbff;
 }
 
