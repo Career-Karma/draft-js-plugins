@@ -21,7 +21,8 @@ export default class TableAdd extends Component {
   }
 
   // Note: make sure whenever a click happens within the popover it is not closed
-  onPopoverClick = () => {
+  onPopoverClick = e => {
+    e.stopPropagation();
     this.preventNextClose = true;
   };
 
@@ -69,9 +70,6 @@ export default class TableAdd extends Component {
   };
 
   render() {
-    const popoverClassName = this.state.open
-      ? styles.addVideoPopover
-      : styles.addVideoClosedPopover;
     const buttonClassName = this.state.open
       ? styles.addVideoPressedButton
       : styles.addVideoButton;
@@ -89,31 +87,34 @@ export default class TableAdd extends Component {
           </button>
         )}
         {this.props.render && this.props.render({ onClick: this.openPopover })}
-        <div className={popoverClassName} onClick={this.onPopoverClick}>
-          <p>Add a Table</p>
-          <input
-            type="text"
-            placeholder="Columns"
-            className={styles.addVideoInput}
-            onChange={this.changeCols}
-            value={this.state.columns}
-          />
-          <span style={{ marginRight: '4%' }}>X</span>
-          <input
-            type="text"
-            placeholder="Rows"
-            className={styles.addVideoInput}
-            onChange={this.changeRows}
-            value={this.state.rows}
-          />
-          <button
-            className={styles.addVideoConfirmButton}
-            type="button"
-            onClick={this.addTable}
-          >
-            Add
-          </button>
-        </div>
+        {this.state.open && (
+          <div className={styles.addVideoPopover} onClick={this.onPopoverClick}>
+            <p>Add a Table</p>
+            <input
+              type="text"
+              placeholder="Columns"
+              className={styles.addVideoInput}
+              onChange={this.changeCols}
+              value={this.state.columns}
+              autoFocus
+            />
+            <span style={{ marginRight: '4%' }}>X</span>
+            <input
+              type="text"
+              placeholder="Rows"
+              className={styles.addVideoInput}
+              onChange={this.changeRows}
+              value={this.state.rows}
+            />
+            <button
+              className={styles.addVideoConfirmButton}
+              type="button"
+              onClick={this.addTable}
+            >
+              Add
+            </button>
+          </div>
+        )}
       </div>
     );
   }

@@ -13,10 +13,6 @@
     z-index: 1000;
 }
 
-.addVideoClosedPopover {
-    display: none;
-}
-
 .addVideoButton {
     box-sizing: border-box;
     background: #fff;
