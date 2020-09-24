@@ -28,6 +28,9 @@ export default class TableAdd extends Component {
   openPopover = () => {
     if (!this.state.open) {
       this.preventNextClose = true;
+      if (this.props.onToggleReadOnly) {
+        this.props.onToggleReadOnly(true);
+      }
       this.setState({
         open: true,
       });
@@ -36,6 +39,10 @@ export default class TableAdd extends Component {
 
   closePopover = () => {
     if (!this.preventNextClose && this.state.open) {
+      if (this.props.onToggleReadOnly) {
+        this.props.onToggleReadOnly(false);
+      }
+
       this.setState({
         open: false,
       });
