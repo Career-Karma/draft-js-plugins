@@ -89,6 +89,7 @@
 
 .cellWrapper {
   position: relative;
+  display: grid;
 }
 .rowButtons {
   display: flex;
@@ -96,18 +97,20 @@
   flex-direction: column;
   justify-content: space-between;
   width: 14px;
-  left: -29px;
-  height: 49px;
-  top: -15px;
+  left: 0px;
+  height: 54px;
+  top: 0px;
+  transform: translate(-125%, -25%);
 }
 .rowButtons span {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 }
 .columnButtons {
-  width: 49px;
-  top: -31px;
-  left: 10px;
+  width: 50px;
+  left: 0px;
+  transform: translateY(-100%);
+  top: 0px;
   display: flex;
   position: absolute;
   justify-content: space-between;
