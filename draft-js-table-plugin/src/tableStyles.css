@@ -99,12 +99,12 @@
   width: 14px;
   left: 0px;
   height: 54px;
-  top: 0px;
+  top: -1px;
   transform: translate(-125%, -25%);
 }
 .rowButtons span {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 18px;
 }
 .columnButtons {
   width: 50px;
