@@ -91,25 +91,32 @@ export default class TableAdd extends Component {
           <div className={styles.addVideoPopover} onClick={this.onPopoverClick}>
             <p>Add a Table</p>
             <input
-              type="text"
+              type="number"
               placeholder="Columns"
               className={styles.addVideoInput}
               onChange={this.changeCols}
               value={this.state.columns}
+              tabIndex={0}
+              min={0}
+              max={10}
               autoFocus
             />
             <span style={{ marginRight: '4%' }}>X</span>
             <input
-              type="text"
+              type="number"
               placeholder="Rows"
               className={styles.addVideoInput}
               onChange={this.changeRows}
+              tabIndex={1}
+              min={0}
+              max={50}
               value={this.state.rows}
             />
             <button
               className={styles.addVideoConfirmButton}
               type="button"
               onClick={this.addTable}
+              tabIndex={2}
             >
               Add
             </button>
